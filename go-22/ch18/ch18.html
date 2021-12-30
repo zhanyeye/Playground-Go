@@ -54,7 +54,7 @@
 			<div id="nav">
 				<select id="files">
 				
-				<option value="file0">go-22/ch18/Fibonacci.go (85.7%)</option>
+				<option value="file0">go-22/ch18/Fibonacci.go (90.0%)</option>
 				
 				</select>
 			</div>
@@ -70,17 +70,25 @@
 		
 		<pre class="file" id="file0" style="display: none">package ch18
 
+var cache = map[int]int{}
+
 func Fibonacci(n int) int <span class="cov8" title="1">{
-        if n &lt; 0 </span><span class="cov0" title="0">{
-                return 0
+        if v, ok := cache[n]; ok </span><span class="cov8" title="1">{
+                return v
         }</span>
-        <span class="cov8" title="1">if n == 0 </span><span class="cov8" title="1">{
-                return 0
-        }</span>
-        <span class="cov8" title="1">if n == 1 </span><span class="cov8" title="1">{
-                return 1
-        }</span>
-        <span class="cov8" title="1">return Fibonacci(n-1) + Fibonacci(n-2)</span>
+        <span class="cov8" title="1">result := 0
+        switch </span>{
+        case n &lt; 0:<span class="cov0" title="0">
+                result = 0</span>
+        case n == 0:<span class="cov8" title="1">
+                result = 0</span>
+        case n == 1:<span class="cov8" title="1">
+                result = 1</span>
+        default:<span class="cov8" title="1">
+                result = Fibonacci(n-1) + Fibonacci(n-2)</span>
+        }
+        <span class="cov8" title="1">cache[n] = result
+        return result</span>
 }
 </pre>
 		

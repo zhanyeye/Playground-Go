@@ -1,14 +1,22 @@
 package ch18
 
+var cache = map[int]int{}
+
 func Fibonacci(n int) int {
-	if n < 0 {
-		return 0
+	if v, ok := cache[n]; ok {
+		return v
 	}
-	if n == 0 {
-		return 0
+	result := 0
+	switch {
+	case n < 0:
+		result = 0
+	case n == 0:
+		result = 0
+	case n == 1:
+		result = 1
+	default:
+		result = Fibonacci(n-1) + Fibonacci(n-2)
 	}
-	if n == 1 {
-		return 1
-	}
-	return Fibonacci(n-1) + Fibonacci(n-2)
+	cache[n] = result
+	return result
 }

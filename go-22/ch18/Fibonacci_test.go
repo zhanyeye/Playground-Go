@@ -33,3 +33,12 @@ func BenchmarkFibonacci(b *testing.B) {
 		Fibonacci(n)
 	}
 }
+
+func BenchmarkFibonacciRunParallel(b *testing.B) {
+	n := 10
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			Fibonacci(n)
+		}
+	})
+}

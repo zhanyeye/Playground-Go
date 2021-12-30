@@ -1,8 +1,0 @@
-mode: set
-go-22/ch18/Fibonacci.go:3.27,4.11 1 1
-go-22/ch18/Fibonacci.go:7.2,7.12 1 1
-go-22/ch18/Fibonacci.go:10.2,10.12 1 1
-go-22/ch18/Fibonacci.go:13.2,13.40 1 1
-go-22/ch18/Fibonacci.go:4.11,6.3 1 0
-go-22/ch18/Fibonacci.go:7.12,9.3 1 1
-go-22/ch18/Fibonacci.go:10.12,12.3 1 1
